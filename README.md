@@ -1,4 +1,4 @@
-# finished-projects
+Portfolio--
 Collection of finished small projects I've worked on.
 
 These are experimental codes I made in order to figure out how animations, colors, and certain design elements could slot together properly.
