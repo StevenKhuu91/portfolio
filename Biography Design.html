@@ -1,0 +1,888 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+
+  body, a:hover {background-color: #151515; }
+
+   #click {position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px;}
+
+   ::-webkit-scrollbar { width: 8px; }
+   ::-webkit-scrollbar-track { width: 7px; -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,3); }
+   ::-webkit-scrollbar-thumb:vertical { border: 3px double #8d82a8; background-color: #d2d2d2; height: auto; }
+
+/*---MODIFIERS---*/
+
+   u { text-decoration: none; color: #4f4f4f; font-size: 40px; }
+   b { color: #1d4f4f; font-size: 38px; font-family: 'Courier New', monospace; background-color: #ffffff; }
+   i { color: #000000; font-size: 15px; text-align: center; letter-spacing: -1px; border: 2px solid #000000; background-color: #ffffff; padding-left: 3px; padding-right: 3px; padding-bottom: 1px; margin-left: 5px; }
+   a { text-decoration: none; color:#ffffff; } a:hover { text-decoration: none; }
+   h1 { letter-spacing: 2px; transform: rotate(-1deg); font-family: 'Anton', sans-serif; font-size: 18px; color: #000000; text-align: center; margin-top: 0px; margin-bottom: 0px; background-color: #ffffff; border: 1px solid black; padding-top: 10px; padding-bottom: 10px; }
+   h2 { font-weight: normal; font-family: 'Permanent Marker', cursive; font-size: 19px; color: #46416a; text-align: right; margin-top: 0px; margin-bottom: 20px; padding-right: 5px; }
+   h3 { letter-spacing: 2px; transform: rotate(1deg); font-family: 'Anton', sans-serif; font-size: 18px; color: #000000; text-align: center; margin-top: 0px; margin-bottom: 0px; background-color: #ffffff; border: 1px solid black; padding-top: 10px; padding-bottom: 10px; }
+
+/*---TOOLTIPS---*/
+
+   a.tooltip {outline: none;}
+
+   a.tooltip:hover {text-decoration: none;}
+
+   a.tooltip span {
+position: fixed; margin: auto; top: 0px; bottom: 0px; left: 385px; right: 0px;
+display: none;
+z-index: 99;
+width: 250px;
+height: 500px;
+text-align: justified;
+font-family: calibri;
+font-size: 15px;
+color: white;
+background-color: #000000;
+border: 5px double #7851a9;;
+border-radius: 10px;
+padding: 10px;
+overflow: hidden;
+opacity: 0.9;
+}
+
+   a.tooltip:hover span {
+display: inline;
+}
+
+
+/*---BUTTONS---*/
+
+   .buttonSTYLING {
+z-index: 95;
+display:inline-block;
+font-size: 38px;
+font-family: calibri;
+font-variant: small-caps;
+width: 190px; height: 1px;
+background-color: #000000;
+padding-bottom: 55px;
+padding-top: 10px;
+padding-right: 70px;
+text-align: right;
+border-bottom: 6px solid #4f4f4f;
+border-right: 3px solid #4f4f4f;
+}
+
+   .buttonSTYLING:hover {
+background-color: #ffffff;
+color: #000000;
+border-bottom: 6px solid #000000;
+border-right: 3px solid #000000;
+border-left: 3px solid #000000;
+transition: all 0.15s ease-in-out;
+-webkit-transition: all 0.15s ease-in-out;
+-moz-transition: all 0.15s ease-in-out;
+-o-transition: all 0.15s ease-in-out;
+-ms-transition: all 0.15s ease-in-out;
+}
+
+   .biographyBUTTONSTYLING {
+z-index: 95;
+display:inline-block;
+font-size: 38px;
+font-family: calibri;
+font-variant: small-caps;
+width: 190px; height: 1px;
+background-color: #000000;
+padding-bottom: 55px;
+padding-top: 10px;
+padding-right: 70px;
+text-align: right;
+border-bottom: 6px solid #4f4f4f;
+border-left: 3px solid #4f4f4f;
+}
+
+   .biographyBUTTONSTYLING:hover {
+background-color: #ffffff;
+color: #000000;
+border-bottom: 6px solid #000000;
+border-left: 3px solid #000000;
+transition: all 0.15s ease-in-out;
+-webkit-transition: all 0.15s ease-in-out;
+-moz-transition: all 0.15s ease-in-out;
+-o-transition: all 0.15s ease-in-out;
+-ms-transition: all 0.15s ease-in-out;
+}
+
+/*-----------------------------------------------------------------*/
+
+   #buttonONE {
+color: white;
+margin: auto; position: fixed; left: 170px; right: 0px; top: 0px; bottom: 435px;
+-ms-transform: rotate(-12deg) skew(-10deg);
+-webkit-transform: rotate(-12deg) skew(-10deg);
+transform: rotate(-12deg) skew(-10deg);
+}
+   #buttonONEEXTENSION {
+z-index: 94;
+background-color: #ebebeb;
+width: 200px; height: 50px;
+margin: auto; position: fixed; left: 300px; right: 0px; top: 0px; bottom: 430px;
+transform: rotate(-15deg) skew(-10deg);
+}
+   #buttonONE:after {
+content: '◁';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -10px;
+transition: 0.2s;
+}
+   #buttonONE:hover { color: #000000; }
+   #buttonONE:hover:after { opacity: 1; right: 20px;}
+   .buttonONESKEW { display:inline-block; transform: skew(5deg); }
+
+/*-----------------------------------------------------------------*/
+
+   #buttonTWO {
+color: white;
+margin: auto; position: fixed; left: 170px; right: 0px; top: 0px; bottom: 250px;
+-ms-transform: rotate(-10deg) skew(-5deg);
+-webkit-transform: rotate(-10deg) skew(-5deg);
+transform: rotate(-10deg) skew(-5deg);
+}
+   #buttonTWOEXTENSION {
+z-index: 94;
+background-color: #ebebeb;
+width: 200px; height: 50px;
+margin: auto; position: fixed; left: 290px; right: 0px; top: 0px; bottom: 230px;
+transform: rotate(0deg) skew(-18deg);
+}
+   #buttonTWO:after {
+content: '◁';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -10px;
+transition: 0.2s;
+}
+   #buttonTWO:hover { color: #000000; }
+   #buttonTWO:hover:after { opacity: 1; right: 20px; }
+   .buttonTWOSKEW { display:inline-block; transform: skew(10deg); }
+
+/*-----------------------------------------------------------------*/
+
+   #buttonTHREE {
+color: white;
+margin: auto; position: fixed; left: 170px; right: 0px; top: 0px; bottom: 60px;
+-ms-transform: rotate(-2deg) skew(8deg);
+-webkit-transform: rotate(-2deg) skew(8deg);
+transform: rotate(-2deg) skew(8deg);
+}
+   #buttonTHREEEXTENSION {
+z-index: 94;
+background-color: #ebebeb;
+width: 200px; height: 50px;
+margin: auto; position: fixed; left: 250px; right: 0px; top: 0px; bottom: 25px;
+transform: rotate(-5deg) skew(-8deg);
+}
+   #buttonTHREE:after {
+content: '◁';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -10px;
+transition: 0.2s;
+}
+   #buttonTHREE:hover { color: #000000; }
+   #buttonTHREE:hover:after {
+  opacity: 1;
+  right: 20px;
+}
+   .buttonTHREESKEW {
+display:inline-block;
+transform: skew(-23deg);
+}
+
+/*-----------------------------------------------------------------*/
+
+   #buttonFOUR {
+color: white;
+margin: auto; position: fixed; left: 170px; right: 0px; top: 0px; bottom: -140px;
+-ms-transform: rotate(6deg) skew(-15deg);
+-webkit-transform: rotate(6deg) skew(-15deg);
+transform: rotate(6deg) skew(-15deg);
+}
+   #buttonFOUREXTENSION {
+z-index: 94;
+background-color: #ebebeb;
+width: 200px; height: 50px;
+margin: auto; position: fixed; left: 230px; right: 0px; top: 0px; bottom: -140px;
+-ms-transform: rotate(10deg) skew(-15deg);
+-webkit-transform: rotate(10deg) skew(-15deg);
+transform: rotate(-15deg) skew(-15deg);
+}
+   #buttonFOUR:after {
+content: '◁';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -10px;
+transition: 0.2s;
+}
+   #buttonFOUR:hover { color: #000000; }
+   #buttonFOUR:hover:after {
+  opacity: 1;
+  right: 20px;
+}
+   .buttonFOURSKEW {
+display:inline-block;
+transform: skew(-7deg);
+}
+/*-----------------------------------------------------------------*/
+   #buttonFIVE {
+color: white;
+margin: auto; position: fixed; left: 170px; right: 0px; top: 0px; bottom: -320px;
+-ms-transform: rotate(6deg) skew(-15deg);
+-webkit-transform: rotate(6deg) skew(-15deg);
+transform: rotate(5deg) skew(6deg);
+}
+   #buttonFIVEEXTENSION {
+z-index: 94;
+background-color: #ebebeb;
+width: 200px; height: 50px;
+margin: auto; position: fixed; left: 280px; right: 0px; top: 0px; bottom: -380px;
+-ms-transform: rotate(10deg) skew(-15deg);
+-webkit-transform: rotate(10deg) skew(-15deg);
+transform: rotate(15deg) skew(15deg);
+}
+   #buttonFIVE:after {
+content: '◁';
+position: absolute;
+opacity: 0;  
+top: 14px;
+right: -10px;
+transition: 0.2s;
+}
+   #buttonFIVE:hover { color: #000000; }
+   #buttonFIVE:hover:after {
+  opacity: 1;
+  right: 20px;
+}
+   .buttonFIVESKEW {
+display:inline-block;
+transform: skew(-7deg);
+}
+
+/*-----------------------------------------------------------------*/
+
+   .tabs {
+  position: relative;
+  min-height: 200px;
+  clear: both;
+  margin: 25px 0;
+}
+
+   .tab {
+  float: left;
+}
+
+   .tab label {
+  background: #eee;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+  position: relative;
+  left: 1px;
+}
+
+   .tab [type="radio"] {
+  opacity: 0;
+}
+
+   .tabSOCIAL [type="radio"] {
+  opacity: 0;
+}
+
+   .content {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  background: white;
+  right: 0;
+  bottom: 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+
+   .content > * {
+  opacity: 0;
+  transform: translateX(-100%);
+  transform: translateY(100%);
+  transition: all 0.6s ease;
+}
+
+   [type="radio"]:focus ~ label {  } /*--- For 'outline' when selected. Looks pretty ugly, but experiment. ---*/
+
+   [type="radio"]:checked ~ label {
+  background: white;
+  border-bottom: 1px solid white;
+  z-index: 2;
+}
+
+   [type="radio"]:checked ~ label ~ .content {
+  z-index: 1;
+}
+
+   [type="radio"]:checked ~ label ~ .content > * {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/*-----------------------------------------------------------------*/
+
+   #reset { margin: auto; position: fixed; left: -950px; right: 0px; top: 0px; bottom: 150px; z-index: 97; width: 150px; height: 50px; }
+   #reset a {
+z-index: 95;
+display: inline-block;
+font-size: 38px;
+font-family: calibri;
+font-variant: small-caps;
+width: 190px; height: 1px;
+background-color: #000000;
+padding-bottom: 55px;
+padding-top: 10px;
+padding-left: 50px;
+text-align: left;
+border-top: 6px solid #4f4f4f;
+border-left: 3px solid #4f4f4f;
+transform: rotate(15deg) skew(6deg);
+transition: all 0.15s ease-in-out;
+-webkit-transition: all 0.15s ease-in-out;
+-moz-transition: all 0.15s ease-in-out;
+-o-transition: all 0.15s ease-in-out;
+-ms-transition: all 0.15s ease-in-out;
+}
+
+   #reset a:hover {
+background-color: #ffffff;
+color: #000000;
+transition: all 0.15s ease-in-out;
+-webkit-transition: all 0.15s ease-in-out;
+-moz-transition: all 0.15s ease-in-out;
+-o-transition: all 0.15s ease-in-out;
+-ms-transition: all 0.15s ease-in-out;
+}
+
+/*---IMAGES---*/
+
+   #welcomeIMAGE {
+z-index: 99;
+float: left;
+position: fixed;
+background-image: url("URL");
+width: 354px; height: 500px;
+border: 4px double #3b211f;
+background-color: white;
+border-radius: 8px;
+box-shadow: -8px 12px 20px #646464;
+-ms-transform: rotate(-5deg);
+-webkit-transform: rotate(-5deg);
+transform: rotate(-5deg);
+}
+
+   #dossierPIC1{
+float: left;
+width: 290px; height: 260px;
+background-image: url("URL");
+border: 3px double #3b211f;
+background-color: black;
+margin-left: 5px;
+border-radius: 8px;
+}
+
+   #dossierPIC2{
+float: left;
+width: 290px; height: 260px;
+background-image: url("URL");
+border: 3px double #3b211f;
+background-color: black;
+margin-left: 5px;
+margin-top: 2px;
+border-radius: 8px;
+}
+
+   #socialsCORNERPIC {
+background-image: url("URL");
+width: 319px; height: 450px;
+float: right;
+margin-top: -100px;
+z-index: -9;
+}
+
+
+/*---BOXES---*/
+
+   #welcomeCONTAINER {
+margin: auto; position: fixed; left: 0px; right: 0px; top: 0px; bottom: 0px;
+width: 750px; height: 500px;
+}
+
+   #welcomeSTYLING {
+z-index: -99;
+float: left;
+width: 700px; height: 450px;
+background-color: #381d4f;
+-ms-transform: rotate(5deg);
+-webkit-transform: rotate(5deg);
+transform: rotate(5deg);
+}
+
+   #name {
+width: 250px; height: 80px;
+text-shadow: #000000 -1px 0px, #000000 0px 1px, #000000 1px 0px, #000000 0px -1px;
+margin: auto; position: fixed; left: -440px; right: 80px; top: 0px; bottom: 490px;
+font-family: 'Permanent Marker', cursive;
+font-size: 65px;
+letter-spacing: 3px;
+word-spacing: 5px;
+color: #7851a9;
+z-index: 99;
+transform: rotate(-13deg);
+}
+
+   .infoBoxes {
+margin: auto; position: fixed; left: 0px; right: 180px; top: 0px; bottom: 0px;
+width: 1px; height: 1px;
+opacity: 0;
+z-index: -1;
+overflow: hidden;
+transform: rotate(65deg);
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+   .infoBoxes:target {
+margin: auto; position: fixed; left: 0px; right: 50px; top: 0px; bottom: 0px;
+width: 680px; height: 570px;
+opacity: 1;
+transform: rotate(359deg);
+z-index: 999;
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+   .infoSTYLING {
+font-family: 'Josefin Sans', sans-serif;
+font-size: 18px;
+line-height: 20px;
+text-align: left;
+color: #000000;
+background-image: url("https://i.imgur.com/ThQmThG.png"); background-repeat: repeat;
+float: left;
+border: 2px solid #1F1D4F;
+padding: 15px;
+}
+
+/*-----------------------------------------------------------------*/
+
+   #dossierCONTAINER { width: 340px; height: 500px; }
+
+   #dossierLEFTBOX { width: 160px; height: 320px; padding: 5px; float: left; font-size: 15px; }
+
+   #dossierRIGHTBOX { width: 160px; height: 320px; padding: 5px; float: left; font-size: 15px; }
+
+   #dossierBOTTOMBOX { width: 340px; height: 150px; padding: 5px; float: left; }
+
+/*-----------------------------------------------------------------*/
+
+   #biographyNAVIGATIONTITLE { width: 640px; height: 70px; float: left; transform: rotate(8deg) skew(2deg); margin-left: 5px; margin-top: 50px; margin-bottom: -55px; }
+   #biographyTOPBOX { width: 640px; float: left; height: 200px; margin-bottom: -45px; overflow: hidden; }
+   #biographyTOPTEXTBOX { width: 640px; float: left; height: 145px; transform: rotate(1deg); margin-top: 10px; overflow: auto; } /*---This is to prevent the weird jagged edges on the scrollbar track.---*/
+   #biographyBOTTOMBOX { width: 640px; height: 270px; float: left; transform: rotate(-0.1deg); margin-top: 50px; overflow: hidden; }
+
+/*-----------------------------------------------------------------*/
+
+   #contactsMAINBOX { width: 680px; height: 550px; background-color: #ffffff; float: left; border: 2px solid #1F1D4F; }
+   #contactsZIG { width: 190px; height: 460px; background-color: transparent; float: left; overflow:hidden; } /*---LEFT COLUMN---*/
+   #contactsZAG { width: 190px; height: 460px; background-color: transparent; float: left; overflow:hidden; } /*---RIGHT COLUMN---*/
+   #contactsSPACER { width: 200px; height: 35px; background-color: transparent; float: left; } /*---Spaces ZAG column to create uneven buttons---*/
+   #contactsTITLE { width: 355px; height: 60px; background-color: transparent; float: left; margin-left: 10px; margin-top: 15px; } /*---FOR h3---*/
+
+   #f1 { background-image: url("URL HERE"); }
+
+   #f2 { background-image: url("URL HERE"); }
+
+   #f3 { background-image: url("URL HERE"); }
+
+   #f4 { background-image: url("URL HERE"); }
+
+   #f10 { background-image: url("URL HERE"); }
+
+   .fname {
+width: 110px;
+height: 18px;
+padding-top: 1px;
+padding-bottom: 2px;
+margin-top: 5px;
+margin-left: -15px;
+float: left;
+background-color: #5c5c5c;
+border: 2px solid #f0f0f0;
+font-family: calibri;
+font-size: 14px;
+font-variant: small-caps;
+text-align: center;
+color: #f0f0f0;
+border-radius: 16px 0px 16px 0px;
+opacity: 0;
+z-index: 99; 
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+   .friend {
+width: 155px;
+height: 50px;
+float: left;
+border: 2px solid #141414;
+border-left: 9px solid black;
+border-top: 7px solid black;
+margin-top: 20px;
+margin-left: 15px;
+margin-bottom: 5px;
+z-index: 99; 
+transform: rotate(-3deg) skew(-1deg);
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+   .friend:hover .fname {
+opacity: 1;
+margin-left: 18px;
+transition: all 0.3s ease-in-out;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+}
+
+/*-----------------------------------------------------------------*/
+
+   #assets { }
+
+/*-----------------------------------------------------------------*/
+
+   #oocTOPBOX { width: 640px; height: 220px; padding: 20px; margin-bottom: 10px; float: left; line-height: 20px; }
+   #oocBOTTOMBOX { width: 640px; height: 220px; padding: 20px; float: left; line-height: 20px; }
+
+
+</style>
+
+<div id="click" oncontextmenu="false;">
+
+    <div id="welcomeCONTAINER">
+    <div id="welcomeIMAGE"></div>
+    <div id="welcomeSTYLING"></div>
+    <div id="reset"><a href="#reset">R<u>e</u><b>s</b>et</a></div>
+    
+    <div id="name">Johnathan</div>
+    
+    <a href="#dossier">
+    <div class="buttonSTYLING" id="buttonONE">
+    <span class="buttonONESKEW"><b>D</b>os<u>s</u>ier</span>
+    </div></a>
+    <div id="buttonONEEXTENSION"></div>
+    
+    <a href="#biography">
+    <div class="buttonSTYLING" id="buttonTWO">
+    <span class="buttonTWOSKEW">Bi<b>o</b>graph<u>y</u></span>
+    </div></a>
+    <div id="buttonTWOEXTENSION"></div>
+    
+    <a href="#contacts">
+    <div class="buttonSTYLING" id="buttonTHREE">
+    <span class="buttonTHREESKEW"><u>C</u>ontac<b>t</b>s</span>
+    </div></a>
+    <div id="buttonTHREEEXTENSION"></div>
+    
+    <a href="#assets">
+    <div class="buttonSTYLING" id="buttonFOUR">
+    <span class="buttonFOURSKEW">A<b>s</b>se<u>t</u>s</span>
+    </div></a>
+    <div id="buttonFOUREXTENSION"></div>
+    
+    <a href="#ooc">
+    <div class="buttonSTYLING" id="buttonFIVE">
+    <span class="buttonFIVESKEW"><b>O</b><u>O</u>C</span>
+    </div></a>
+    <div id="buttonFIVEEXTENSION"></div>
+    
+    <div id="dossier" class="infoBoxes">
+    <div class="infoSTYLING" id="dossierCONTAINER">
+    
+    <h1> DOSSIER </h1>
+    
+    <div id="dossierLEFTBOX">
+    <p style="background-color: #000000; transform: rotate(-1deg) skew(2deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-left: 10px; font-family: 'Anton', sans-serif;">Name</p>
+    <p style="background-color: #ffffff; transform: rotate(-1deg) skew(2deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 13px; font-family: 'Anton', sans-serif;">NAME HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -16px; margin-left: 5px; font-family: 'Anton', sans-serif;">Age</p>
+    <p style="background-color: #ffffff; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 5px; font-family: 'Anton', sans-serif;">AGE HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(-2deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -16px; margin-left: 0px; font-family: 'Anton', sans-serif;">Occupation</p>
+    <p style="background-color: #ffffff; transform: rotate(-2deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 0px; font-family: 'Anton', sans-serif;">OCCUPATION HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -12px; margin-left: 8px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 8px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(-2deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -16px; margin-left: 6px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(-2deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 6px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    </div>
+    
+    <div id="dossierRIGHTBOX">
+    <p style="background-color: #000000; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-left: 5px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 5px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(-1deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -16px; margin-left: 0px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(-1deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 0px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -16px; margin-left: 5px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(2deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 5px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(-2deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -16px; margin-left: 6px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(-2deg) skew(3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 6px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    
+    <p style="background-color: #000000; transform: rotate(1deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #ffffff; text-align: center; margin-bottom: -14px; margin-top: -12px; margin-left: 0px; font-family: 'Anton', sans-serif;">DETAIL</p>
+    <p style="background-color: #ffffff; transform: rotate(1deg) skew(-3deg); padding-top: 5px; padding-bottom: 3px; padding-left: 2px; padding-right: 2px; color: #000000; text-align: center; margin-left: 0px; font-family: 'Anton', sans-serif;">DETAIL HERE</p>
+    </div>
+    
+    <div id="dossierBOTTOMBOX">
+    <h3> Work In Progress </h3>
+    </div>
+    
+    </div>
+    <div id="DOSSIERpic1"></div>
+    <div id="DOSSIERpic2"></div>
+    </div>
+    
+    <div id="biography" class="infoBoxes">
+    <div class="infoSTYLING" id="biographyTOPBOX">
+    <h1> Current Events </h1>
+    <div id="biographyTOPTEXTBOX">
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati aut optio, nulla, nobis at similique libero accusantium voluptatibus aliquid, doloremque amet aliquam ad nihil. Autem temporibus distinctio iure consectetur praesentium! </p>
+    
+    <p style="text-indent: 20px;"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est voluptates itaque dolorum sed magni cupiditate, sit a nostrum adipisci culpa dolores eos, aspernatur placeat maxime. Necessitatibus veniam delectus fugit vero! </p>
+    
+    </div>
+    </div>
+    
+    <div class="infoSTYLING" id="biographyBOTTOMBOX">
+    <h3> History </h3>
+    <div class="tabs">
+     <div class="tab">
+     <input type="radio" id="tab-1" name="tab-group-1" checked>
+     <label for="tab-1">Childhood</label>
+     <div class="content">
+    → DETAIL ETC. <br>
+    → DETAIL ETC. <br>
+    → DETAIL ETC. <br>
+    → DETAIL ETC. <br>
+     </div>
+     </div>
+     <div class="tab">
+     <input type="radio" id="tab-2" name="tab-group-1">
+     <label for="tab-2">Adolescence</label>
+     <div class="content">
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+     </div>
+     </div>
+     <div class="tab">
+     <input type="radio" id="tab-3" name="tab-group-1">
+     <label for="tab-3">Early Adulthood</label>
+     <div class="content">
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+     </div>
+     </div>
+    <div class="tab">
+     <input type="radio" id="tab-4" name="tab-group-1">
+     <label for="tab-4">The Syndicate</label>
+     <div class="content">
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+      → DETAIL ETC. <br>
+     </div>
+     </div>
+    </div>
+    
+    
+    </div>
+    </div>
+    </div>
+    
+    <div id="contacts" class="infoBoxes">
+    <div id="contactsMAINBOX">
+    
+    <div id="contactsZIG">
+    
+    <a target="_blank" href="REFERENCE URL" class="tooltip"><div id="f1" class="friend">
+    <div class="fname">
+    Name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem excepturi magnam doloremque suscipit necessitatibus, adipisci veniam repellat id est ex! In iste repudiandae, aliquam repellat dolore aut officia temporibus reiciendis? </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim impedit a omnis provident, quaerat ullam illo asperiores quibusdam nam sunt libero mollitia excepturi blanditiis vitae nemo non doloremque saepe eos? </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    
+    
+    </div>
+    <div id="contactsZAG">
+    <div id="contactsSPACER"></div>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    <a target="_blank" href="URL HERE" class="tooltip"><div id="f10" class="friend">
+    <div class="fname">
+    name
+    </div>
+    </div>
+    <span>
+    <h2> Title </h1>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    <p style="text-indent: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eu tortor non nisi ullamcorper egestas. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor, enim nec pellentesque condimentum, lectus urna semper tellus, at euismod nisi quam a purus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Praesent porttitor varius elit, sit amet efficitur odio lobortis sed. Integer venenatis tincidunt viverra. </p>
+    </span></a>
+    
+    </div>
+    
+    <div id="contactsTITLE">
+    <h3> Contacts </h3>
+    </div>
+    
+    </div>
+    </div>
+    
+    <div id="assets" class="infoBoxes">
+    
+    </div>
+    
+    <div id="ooc" class="infoBoxes">
+    <div class="infoSTYLING" id="oocTOPBOX">
+    <h1> HEADER </h1>
+    <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    </div>
+    
+    <div class="infoSTYLING" id="oocBOTTOMBOX">
+    <h3> HEADER </h3>
+    <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    》 DETAIL HERE. <br>
+    </div>
+    
+    </div>
+    
+    
+    </div>
