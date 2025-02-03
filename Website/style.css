@@ -1,11 +1,14 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: 'Quicksand', serif;
-    background-image: url();
-}
-
 @font-face {
     font-family: 'Quicksand';
     src: url('../fonts/quicksand.ttf'); /* double .. means you go UP a folder from the current directory. required for this to navigate to fonts folder. */
+    font-display: swap;
+    font-style: normal;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Quicksand', 'Monospace';
+    background-image: url('../images/black-felt.png');
+    background-repeat: repeat;
 }
