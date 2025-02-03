@@ -1,8 +1,10 @@
 body {
     background-color: black;
-    font-size: 15px;
     color: white;
-    font-family: Monospace, sans-serif;
-    font-weight: 100;
+    font-family: 'Quicksand', serif;
 }
 
+@font-face {
+    font-family: 'Quicksand';
+    src: url('../fonts/quicksand.ttf');
+}
