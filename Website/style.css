@@ -12,3 +12,12 @@ body {
     background-image: url('../images/black-felt.png');
     background-repeat: repeat;
 }
+
+.logo {
+    position: fixed;
+    top: 3rem;
+    left: 3rem;
+    background-image: url('../images/logoTransparent.png');
+    width: 27px;
+    height: 50px;
+}
