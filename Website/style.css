@@ -8,11 +8,21 @@
 body {
     background-color: black;
     color: white;
-    font-family: 'Quicksand', 'Monospace';
+}
+
+:root {
     background-image: url('../images/black-felt.png');
     background-repeat: repeat;
+    background-color: black;
+    font-family: 'Quicksand', 'Monospace';
+    color: white;
+    line-height: 2em;
     text-align: left;
-    line-height: 1.6em;
+
+
+    --fontColor: white;
+    --linkColor: gray;
+    --linkHoverColor: white;
 }
 
 a {
@@ -32,7 +42,12 @@ p {
 hr {
     width: 10em;
     margin: 2em auto;
-    border: 1px solid gray;
+    border: 1px solid #8080803b;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; };
+    100% {opacity: 1; };
 }
 
 .logo {
@@ -116,4 +131,17 @@ hr {
         right: 8em;
         opacity: 1;
     }
+}
+/* FIGURE OUT HOW TO STAGGER THIS SO ALL THE TEXT BLOCKS COME IN GRADUALLY */
+.infoBlock {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-delay: 200ms;
+    margin-top: 1em;
+}
+
+.infoBlock p:nth-child(1) {
+    animation-delay: .5s;
 }
