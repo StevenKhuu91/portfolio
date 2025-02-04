@@ -12,7 +12,7 @@ body {
     background-image: url('../images/black-felt.png');
     background-repeat: repeat;
     text-align: left;
-    line-height: 1.5em;
+    line-height: 1.6em;
 }
 
 a {
@@ -24,6 +24,11 @@ a {
     }
 }
 
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
 hr {
     width: 10em;
     margin: 2em auto;
@@ -32,11 +37,25 @@ hr {
 
 .logo {
     position: fixed;
-    top: 3rem;
-    left: 3rem;
+    top: 3em;
+    left: 3em;
     background-image: url('../images/logoTransparent.png');
     width: 27px;
     height: 50px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        filter: invert(75%);
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
 }
 
 .container {
@@ -46,3 +65,55 @@ hr {
     height: 60em;
 }
 
+.navContainer {
+    position: fixed;
+    top: 2em;
+    right: 2em;
+    display: flex;
+    justify-content: center;
+}
+
+.nav {
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 20px;
+    color: #ffffff;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        color: #969696;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+}
+
+    &:after {
+        position: absolute;
+        top: 0em;
+        right: 7em;
+        content:'►';
+        font-size: 10px;
+        color: #969696;
+        opacity: 0;
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -ms-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+}
+
+    &:hover:after {
+        right: 8em;
+        opacity: 1;
+    }
+}
