@@ -145,3 +145,22 @@ hr {
 .infoBlock p:nth-child(1) {
     animation-delay: .5s;
 }
+
+.infoBlock:hover:after {
+    opacity: 0;
+    position: fixed;
+    right: 100px; top: 100px;
+    color: #fff;
+    font-size: 15px;
+    -webkit-animation: .3s ease-in-out;
+    -moz-animation: .2s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+
+
+&:hover {
+    color: #fff;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+}
