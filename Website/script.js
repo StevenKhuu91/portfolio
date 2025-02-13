@@ -10,3 +10,11 @@ function setTheme(theme) {
 }
 /* See how this uses root styles! Very similar to CSS roots, and uses them in fact. */
 setTheme('light');
+
+
+function toggle_visibility(id) {
+    var e = document.getElementById(id);
+    if(e.style.display == 'block')
+        e.style.dispay = 'none';
+    else e.style.display = 'block';
+}

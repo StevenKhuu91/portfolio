@@ -138,7 +138,7 @@ hr {
         opacity: 1;
     }
 }
-/* FIGURE OUT HOW TO STAGGER THIS SO ALL THE TEXT BLOCKS COME IN GRADUALLY */
+
 .infoBlock {
     opacity: 0;
     animation-name: fadeIn;
@@ -158,4 +158,15 @@ hr {
 
 #fourth {
     animation-delay: 400ms;
+}
+
+#checkONE, #checkTWO, #checkTHREE, #checkFOUR { display: none; } /* Hides physical checkboxes */
+
+#checkONE:checked~.infoBlock {
+    visibility: visible;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
