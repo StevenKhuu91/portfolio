@@ -28,9 +28,19 @@ body {
 a {
     text-decoration: none;
     color: gray;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    -ms-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 
     &:hover {
         color: white;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        -o-transition: all .3s ease-in-out;
+        -ms-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
     }
 }
 
@@ -79,7 +89,7 @@ hr {
     }
 }
 
-.container {
+.container { /*--- MAIN CONTAINER ---*/
     margin: auto; position: fixed;
     left: 0; top: 0; right: 0; bottom: 0;
     width: 40em;
@@ -160,13 +170,55 @@ hr {
     animation-delay: 400ms;
 }
 
-#checkONE, #checkTWO, #checkTHREE, #checkFOUR { display: none; } /* Hides physical checkboxes */
+/*--- CHECKBOX NAVIGATION ---*/
 
-#checkONE:checked~.infoBlock {
+#home:checked~.infoBlock {
+    opacity: 1;
     visibility: visible;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
 }
+
+#home:checked~.projects {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#home:checked~.blog {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*---------------------*/
+
+#projects:checked~.infoBlock {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#projects:checked~.projects {
+    opacity: 1;
+    visibility: visible;
+}
+
+#projects:checked~.blog {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/*---------------------*/
+
+#blog:checked~.infoBlock {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#blog:checked~.projects {
+    opacity: 0;
+    visibility: hidden;
+}
+
+#blog:checked~.blog {
+    opacity: 1;
+    visibility: visible;
+}
+
+/*---------------------*/
