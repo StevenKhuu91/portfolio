@@ -180,56 +180,14 @@ hr {
     cursor: pointer;
 }
 
-/*--- CHECKBOX NAVIGATION ---*/
+/*--- RADIO NAVIGATION ---*/
 
-#home:checked ~ infoBlock {
+input[type="radio"] { display: none; } /*--- Makes radio element invisible. Radio is better for single elements, checkbox hack is better for multiple. ---*/
+
+#home:checked ~ .infoBlock,
+#projects:checked ~ .projectBlock,
+#blog:checked ~ .blogBlock {
+    display: block;
     opacity: 1;
-    visibility: visible;
+    transform: scale(1);
 }
-
-#home:checked ~ .projectBlock {
-    opacity: 0;
-    visibility: hidden;
-}
-
-#home:checked ~ .blog {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/*---------------------*/
-
-#projects:checked ~ .infoBlock {
-    opacity: 0;
-    visibility: hidden;
-}
-
-#projects:checked ~ .projectBlock {
-    opacity: 1;
-    visibility: visible;
-}
-
-#projects:checked ~ .blog {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/*---------------------*/
-
-#blog:checked ~ .infoBlock {
-    opacity: 0;
-    visibility: hidden;
-}
-
-#blog:checked ~ .projectBlock {
-    opacity: 0;
-    visibility: hidden;
-}
-
-#blog:checked ~ .blog {
-    opacity: 1;
-    visibility: visible;
-}
-
-/*---------------------*/
-

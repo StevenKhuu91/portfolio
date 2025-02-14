@@ -13,7 +13,6 @@
 
 <div class="container">
 
-<input type="checkbox" id="home" hidden>
 <div class="infoBlock">
     <h1>Steven Khuu</h1>
     <p>
@@ -51,11 +50,14 @@
 </a>
 
 <input type="checkbox" id="button" hidden> <!-- This sets the checkbox input type, and the labels it with the div id=button. The following sets it to hidden so there's no actual checkbox in visible sight. -->
+    <input type="radio" name="home" id="home" checked>
+    <input type="radio" name="projects" id="projects">
+    <input type="radio" name="blog" id="blog">
 
 <div class="navContainer">
     <a href="#home">
         <div class="nav">
-            <label for="home" id="navClick">HOME</label> <!-- Setting the button up as a checkbox instead of a traditional button. div id is to prevent cursor shenanigans and keep it consistent. -->
+            <label for="home" id="navClick">HOME</label>
         </div>
     </a>
 
@@ -70,6 +72,11 @@
             <label for="blog" id="navClick">BLOG</label>
         </div>
     </a>
+
+
+
+
+
 </div>
 
 </body>
