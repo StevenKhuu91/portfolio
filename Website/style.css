@@ -149,7 +149,7 @@ hr {
     }
 }
 
-.infoBlock {
+.infoBlock { /*--- LANDING PAGE ---*/
     opacity: 0;
     animation-name: fadeIn;
     animation-duration: 1s;
@@ -170,55 +170,66 @@ hr {
     animation-delay: 400ms;
 }
 
+.projectBlock {
+    width: 40em;
+    height: 60em;
+    background-color: white;
+}
+
+#navClick { /*--- To keep the hover effect for the buttons as a pointer and consistent with the rest of everything. ---*/
+    cursor: pointer;
+}
+
 /*--- CHECKBOX NAVIGATION ---*/
 
-#home:checked~.infoBlock {
+#home:checked ~ infoBlock {
     opacity: 1;
     visibility: visible;
 }
 
-#home:checked~.projects {
+#home:checked ~ .projectBlock {
     opacity: 0;
     visibility: hidden;
 }
 
-#home:checked~.blog {
+#home:checked ~ .blog {
     opacity: 0;
     visibility: hidden;
 }
 
 /*---------------------*/
 
-#projects:checked~.infoBlock {
+#projects:checked ~ .infoBlock {
     opacity: 0;
     visibility: hidden;
 }
 
-#projects:checked~.projects {
+#projects:checked ~ .projectBlock {
     opacity: 1;
     visibility: visible;
 }
 
-#projects:checked~.blog {
+#projects:checked ~ .blog {
     opacity: 0;
     visibility: hidden;
 }
 
 /*---------------------*/
 
-#blog:checked~.infoBlock {
+#blog:checked ~ .infoBlock {
     opacity: 0;
     visibility: hidden;
 }
 
-#blog:checked~.projects {
+#blog:checked ~ .projectBlock {
     opacity: 0;
     visibility: hidden;
 }
 
-#blog:checked~.blog {
+#blog:checked ~ .blog {
     opacity: 1;
     visibility: visible;
 }
 
 /*---------------------*/
+

@@ -12,6 +12,8 @@
 <body>
 
 <div class="container">
+
+<input type="checkbox" id="home" hidden>
 <div class="infoBlock">
     <h1>Steven Khuu</h1>
     <p>
@@ -38,37 +40,37 @@
         <a href="https://www.instagram.com/staykhuu/" target="_blank" rel="noopener noreferrer">Instagram</a>
     </p>
 </div>
+</input>
+
+<input type="checkbox" id="projects">
+    <div class="projectBlock"></div>
+</input>
 
 <a href="https://stevenkhuu91.github.io" title="Steven Khuu @ stevenkhuu91.github.io">
     <div class="logo"></div>
 </a>
 
+<input type="checkbox" id="button" hidden> <!-- This sets the checkbox input type, and the labels it with the div id=button. The following sets it to hidden so there's no actual checkbox in visible sight. -->
+
 <div class="navContainer">
     <a href="#home">
         <div class="nav">
-            <label for="home">HOME</label> <!-- Setting the button up as a checkbox instead of a traditional button. -->
+            <label for="home" id="navClick">HOME</label> <!-- Setting the button up as a checkbox instead of a traditional button. div id is to prevent cursor shenanigans and keep it consistent. -->
         </div>
     </a>
 
     <a href="#projects">
         <div class="nav">
-            <label for="projects">PROJ</label>
+            <label for="projects" id="navClick">PROJ</label>
         </div>
     </a>
 
     <a href="#blog">
         <div class="nav">
-            <label for="blog">BLOG</label>
+            <label for="blog" id="navClick">BLOG</label>
         </div>
     </a>
 </div>
-
-<input type="checkbox" id="button" hidden> <!-- This sets the checkbox input type, and the labels it with the div id=button. The following sets it to hidden so there's no actual checkbox in visible sight. -->
-
-
-
-<!-- <label for="button" class="box first">Click to toggle</label> The starting point of the checkbox button. -->
-<!-- <div class="box second">New Content Appears</div> -->
 
 </body>
 </html>
